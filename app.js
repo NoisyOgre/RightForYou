@@ -57,7 +57,7 @@ const index = require("./routes/index");
 app.use("/", index);
 const products = require("./routes/product");
 app.use("/", products);
-const author = require("./routes/author");
+const author = require("./routes/quizz");
 app.use("/", author);
 const auth = require("./routes/auth");
 app.use("/", auth);

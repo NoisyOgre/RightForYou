@@ -28,13 +28,6 @@ router.get("/products/:productId", async (req,res)=>{
 //http://localhost:3000/books
 /* 
 
-//http://loacalhost:3000/books/123467
-router.get("/books/:bookId", async (req, res) => {
-    const bookId = await Book.findById(req.params.bookId).populate("author")
-    res.render("books/book-details", bookId)
-});
-
-
 router.get("/create-book",requireLogin,async (req, res) => {
     const authors = await Author.find()
     res.render("books/book-create", {authors})
