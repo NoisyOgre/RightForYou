@@ -2,11 +2,7 @@
 <ul>
 {{#each product}}
 <li>
-    <a href="books/{{id}}">   {{name}}  </a>
-    <form action="/books/{{id}}/delete" method="POST">
-        <button type="submit">Delete</button>
-    </form>
-    <br/>
+    <a href="products/{{id}}">   {{name}}  </a>
 </li>
 {{/each}}
 </ul>
