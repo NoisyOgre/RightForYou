@@ -55,7 +55,7 @@ app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
 // 👇 Start handling routes here
 const index = require("./routes/index");
 app.use("/", index);
-const products = require("./routes/products");
+const products = require("./routes/product");
 app.use("/", book);
 const author = require("./routes/author");
 app.use("/", author);

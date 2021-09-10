@@ -16,24 +16,17 @@ function requireLogin(req, res, next) {
 
 router.get("/products", async (req,res)=>{
 const product = await Product.find();
-console.log(products);
+console.log(product);
 res.render("products/product-list", {product});
 });
 
-router.get("products/:productId", async (req,res)=>{
+router.get("/products/:productId", async (req,res)=>{
     const productId = await Product.findbyId(req.params.productId);
     res.render("products/product-details", productId);
 });
 
 //http://localhost:3000/books
 /* 
-
-//http://loacalhost:3000/books/123467
-router.get("/books/:bookId", async (req, res) => {
-    const bookId = await Book.findById(req.params.bookId).populate("author")
-    res.render("books/book-details", bookId)
-});
-
 
 router.get("/create-book",requireLogin,async (req, res) => {
     const authors = await Author.find()
