@@ -1,7 +1,8 @@
 const router = require("express").Router();
-const Book = require("../models/Book.model");
+const Product = require("../models/Product.model");
 const Author = require("../models/Author.model");
 const fileUpload = require("../config/cloudinary");
+
 
 function requireLogin(req, res, next) {
     if (req.session.currentUser) {
@@ -13,11 +14,11 @@ function requireLogin(req, res, next) {
 
 
 //http://localhost:3000/books
-router.get("/books", async (req, res) => {
-    const books = await Book.find();
+router.get("/products", async (req, res) => {
+    const product = await Product.find();
 
-    console.log(books);
-    res.render("books/books-list", {books});
+    console.log(products);
+    res.render("products/products-list", {product});
 });
 
 
