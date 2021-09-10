@@ -21,7 +21,7 @@ res.render("products/product-list", {product});
 });
 
 router.get("/products/:productId", async (req,res)=>{
-    const productId = await Product.findbyId(req.params.productId);
+    const productId = await Product.findById(req.params.productId);
     res.render("products/product-details", productId);
 });
 
