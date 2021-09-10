@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
 
-const authorSchema = mongoose.Schema({
-    name: String,
-    bio: String,
-    picture: String,
+const brandSchema = mongoose.Schema({
+    brand: String,
+    image_url: String,
 }, {
     timestamps: true,
 });
@@ -11,4 +10,4 @@ const authorSchema = mongoose.Schema({
 
 
 
-module.exports = mongoose.model("Author", authorSchema);
+module.exports = mongoose.model("Brand", brandSchema);
