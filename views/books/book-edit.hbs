@@ -1,0 +1,21 @@
+<h1>Edit Book</h1>
+<form method="POST" action="/books/{{book.id}}/edit">
+    <label>Title</label>
+    <input type="text" name="title" value={{book.title}} />
+    <label>Author</label>
+    <select name="author">
+        <option value="0">select an author</option>
+        {{#each authors}}
+        {{#eq name ../book.author.name}}
+        <option value={{id}} selected>{{name}}</option>
+        {{else}}
+        <option value={{id}}>{{name}}</option>
+        {{/eq}}
+        {{/each}}
+    </select>
+    <label>Description</label>
+    <textarea rows="5" cols="20" name="description">{{book.description}} </textarea>
+    <label>Rating</label>
+    <input type="number" name="rating" value={{book.rating}} />
+    <button type="submit">Update</button>
+</form>
