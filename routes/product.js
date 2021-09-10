@@ -12,9 +12,14 @@ function requireLogin(req, res, next) {
     }
 }
 
+//http://localhost:3000/products
+
+router.get("/products", async (req,res)=>{
+const product = await Product.find();
+});
 
 //http://localhost:3000/books
-router.get("/products", async (req, res) => {
+/* router.get("/products", async (req, res) => {
     const product = await Product.find();
 
     console.log(products);
@@ -90,7 +95,7 @@ router.post("/reviews/:bookId/add", async(req, res) => {
     });
     res.redirect(`/books/${req.params.bookId}`);
 });
-
+ */
 module.exports = router;
 
 
