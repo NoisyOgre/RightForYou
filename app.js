@@ -57,13 +57,10 @@ const index = require("./routes/index");
 app.use("/", index);
 const products = require("./routes/product");
 app.use("/", products);
-<<<<<<< HEAD
-const author = require("./routes/quizz");
-app.use("/", author);
-=======
 const quiz = require("./routes/quizz");
 app.use("/", quiz);
->>>>>>> 8d83fdbc8bc1181fcaae7288167883bfb62c95b3
+const profile = require("./routes/user");
+app.use("/", profile);
 const auth = require("./routes/auth");
 const Product = require("./models/Product.model");
 app.use("/", auth);
