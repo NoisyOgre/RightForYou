@@ -16,16 +16,17 @@ function requireLogin(req, res, next) {
 
 router.get("/products", async (req,res)=>{
 const product = await Product.find();
+console.log(product);
+res.render("products/product-list", {product});
+});
+
+router.get("/products/:productId", async (req,res)=>{
+    const productId = await Product.findById(req.params.productId);
+    res.render("products/product-details", productId);
 });
 
 //http://localhost:3000/books
-/* router.get("/products", async (req, res) => {
-    const product = await Product.find();
-
-    console.log(products);
-    res.render("products/products-list", {product});
-});
-
+/* 
 
 //http://loacalhost:3000/books/123467
 router.get("/books/:bookId", async (req, res) => {
