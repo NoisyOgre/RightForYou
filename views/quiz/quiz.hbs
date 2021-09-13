@@ -1,52 +1,51 @@
-
+<form action="/quiz1" method="POST">
 <div>
 <p>What is your experience level with skin care:</p>
-<form>
-  <input type="radio" id="newbie" name="experience" value="Newbie">
+  <input type="radio" id="experience" name="experience" value="Beginner">
   <label for="html">Beginner</label><br>
-  <input type="radio" id="casual" name="experience" value="Casual">
+  <input type="radio" id="experience" name="experience" value="Intermediate">
   <label for="css">Intermediate</label><br>
-  <input type="radio" id="pro" name="experience" value="Pro">
+  <input type="radio" id="experience" name="experience" value="Advance">
   <label for="javascript">Advance</label>
-  </form>
-
+  
 <br>
 <div>
-<p>What are your skin care goals, choose one or more:</p>
-<form>
-  <input type="checkbox" id="option1" name="option1" value="Option1">
+<p>What is your main skin care goals, choose one or more:</p>
+  <input type="checkbox" id="goals" name="goals" value="Prevention">
   <label for="option1">Preventing further damage both from light/sun and the environment to our skin</label><br>
-  <input type="checkbox" id="vehicle2" name="option2" value="Option2">
+  <input type="checkbox" id="goals" name="goals" value="Keeping">
   <label for="option2">Keeping our skin glowing by optimizing hydration, barrier function and cell turnover, and minimizing irritation;</label><br>
-  <input type="checkbox" id="vehicle3" name="option3" value="Option3">
+  <input type="checkbox" id="goals" name="goals" value="Helping">
   <label for="option3">Helping to repair past superficial damage to skin.</label>
-</form>
+
 </div>
 
 <br>
 <div>
 <p>How commited are you to a new routine:</p>
-<form>
-  <input type="radio" id="fast" name="time" value="Fast">
+  <input type="radio" id="time" name="time" value="ten">
   <label for="fast">Less than 10 mins</label><br>
-  <input type="radio" id="short" name="time" value="Short">
+  <input type="radio" id="time" name="time" value="thirty">
   <label for="short">Less than 30 mins</label><br>
-  <input type="radio" id="long" name="time" value="Long">
+  <input type="radio" id="time" name="time" value="thirtyPlus">
   <label for="long">More than 30 mins</label>
-  </form>
+  
 </div>
 
 <br>
 
 <div>
 <p>Are you following a routine:</p>
-<form>
-  <input type="radio" id="newbie" name="very-little-time" value="Newbie">
+
+  <input type="radio" id="routine" name="routine" value="Yes">
   <label for="html">Yes</label><br>
-  <input type="radio" id="casual" name="a-bit-of-time" value="Casual">
+  <input type="radio" id="routine" name="routine" value="No">
   <label for="css">No</label><br>
-  </form>
+
 </div>
+<input type="submit" value="Next">
+</form>
+
 
 
 
