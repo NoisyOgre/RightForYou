@@ -16,8 +16,9 @@ function requireLogin(req, res, next) {
 
 router.get("/products", async (req,res)=>{
 const response = await axios.get("https://skincare-api.herokuapp.com/products");
+const added = await Product.find();
 /* console.log(response.data); */
-res.render("products/product-list", {products: response.data});
+res.render("products/product-list", {products: response.data, added});
 });
 
 router.get("/products/:id", async (req,res)=>{
@@ -25,6 +26,12 @@ router.get("/products/:id", async (req,res)=>{
     console.log(response.data)
     /* const productId = await response.findById(req.params.id); */
     res.render("products/product-details", response.data);
+});
+router.get("/our-products/:id", async (req,res)=>{
+    const product = await Product.findById(req.params.id);
+    console.log(product)
+    /* const productId = await response.findById(req.params.id); */
+    res.render("products/product-details", product);
 });
 
 router.post("/products/:id/delete", async (req, res) => {
@@ -44,15 +51,31 @@ let fileUrlOnCloudinary = "";
     if(req.file){
         fileUrlOnCloudinary = req.file.path; // the path on cloudinary
     }
-    const { name, brand, ingredients } = req.body;
-    await Book.create({
+    const { name, brand, ingredient_list } = req.body;
+    await Product.create({
        name, 
         brand, 
-        ingredients,  
+        ingredient_list,  
         imageUrl: fileUrlOnCloudinary, 
     });
     res.redirect("/products");
 });
+
+router.get("/products/:id/edit", async (req, res) => {
+    const product  = await Product.findById(req.params.id).populate("brand"); 
+    res.render("products/product-edit", product);
+});
+
+router.post("/products/:id/edit", async (req, res) => {
+    const { name, brand, ingredient_list } = req.body;
+     await Product.findByIdAndUpdate(req.params.id, {
+        name,
+        brand,
+        ingredient_list,
+    });
+    res.redirect("/products");
+});
+
 
    
 
