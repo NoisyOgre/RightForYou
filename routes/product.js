@@ -27,6 +27,35 @@ router.get("/products/:id", async (req,res)=>{
     res.render("products/product-details", response.data);
 });
 
+router.post("/products/:id/delete", async (req, res) => {
+    const response = await axios.get(`https://skincare-api.herokuapp.com/products/${req.params.id}`)
+       res.redirect("/products/");
+   });
+
+   
+router.get("/create-product",requireLogin,async (req, res) => {
+    const brand = await Product.find()
+    res.render("products/product-create", {brand})
+});
+
+router.post("/create-product", fileUpload.single("image"), async (req, res) => {
+
+let fileUrlOnCloudinary = "";
+    if(req.file){
+        fileUrlOnCloudinary = req.file.path; // the path on cloudinary
+    }
+    const { name, brand, ingredients } = req.body;
+    await Book.create({
+       name, 
+        brand, 
+        ingredients,  
+        imageUrl: fileUrlOnCloudinary, 
+    });
+    res.redirect("/products");
+});
+
+   
+
 
 
 //http://localhost:3000/books

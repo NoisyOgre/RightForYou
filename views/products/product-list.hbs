@@ -5,6 +5,11 @@
 <li>
     <a href="products/{{id}}"> {{name}} </a>
     <br/>
+    {{#if loggedInUser}}
+      <form action="/books/{{id}}/delete" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+      {{/if}}
 </li>
 {{/each}}
 </ul>
