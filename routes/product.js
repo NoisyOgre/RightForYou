@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Product = require("../models/Product.model");
 const Author = require("../models/Author.model");
 const fileUpload = require("../config/cloudinary");
-
+const axios = require("axios");
 
 function requireLogin(req, res, next) {
     if (req.session.currentUser) {
@@ -15,9 +15,9 @@ function requireLogin(req, res, next) {
 //http://localhost:3000/products
 
 router.get("/products", async (req,res)=>{
-const product = await Product.find();
-console.log(product);
-res.render("products/product-list", {product});
+const response = await axios.get("https://skincare-api.herokuapp.com/products");
+console.log(response.data);
+res.render("products/product-list", {products: response.data});
 });
 
 router.get("/products/:productId", async (req,res)=>{
