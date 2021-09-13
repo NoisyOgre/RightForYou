@@ -1,15 +1,37 @@
 <h1>Products list</h1>
+
+<ul>
+{{#each added}}
+
+<li>
+    <a href="/our-products/{{id}}"> {{name}} </a>
+    <br/>
+    
+      {{#if loggedInUser}}
+      <form action="/books/{{id}}/delete" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+    {{/if}}
+</li>
+{{/each}}
+</ul>
+
+
 <ul>
 {{#each products}}
 
 <li>
     <a href="products/{{id}}"> {{name}} </a>
     <br/>
-    {{#if loggedInUser}}
-      <form action="/books/{{id}}/delete" method="POST">
-        <button type="submit">Delete</button>
-    </form>
-      {{/if}}
+    
+      
 </li>
 {{/each}}
 </ul>
+
+
+
+
+
+ 
+   

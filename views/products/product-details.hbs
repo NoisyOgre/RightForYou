@@ -1,10 +1,11 @@
 <h1>{{name}}</h1>
 <p>Ingredients: {{ingredient_list}}</p>
 <p> Brand : {{brand}}</p>
-<p>{{rating}}</p>
 {{#if imageUrl}}
 <img src="{{imageUrl}}" />
 {{/if}}
+<button><a href="/products/{{id}}/edit">Edit Product</a></button>
+
 <hr>
 <p>Add a review</p>
 <form action="/reviews/{{id}}/add" method="POST">
@@ -20,3 +21,4 @@
 {{#each reviews}}
 <p>{{name}}  - "{{comment}}" </p>
 {{/each}}
+
