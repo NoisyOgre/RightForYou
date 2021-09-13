@@ -16,14 +16,18 @@ function requireLogin(req, res, next) {
 
 router.get("/products", async (req,res)=>{
 const response = await axios.get("https://skincare-api.herokuapp.com/products");
-console.log(response.data);
+/* console.log(response.data); */
 res.render("products/product-list", {products: response.data});
 });
 
-router.get("/products/:productId", async (req,res)=>{
-    const productId = await Product.findById(req.params.productId);
-    res.render("products/product-details", productId);
+router.get("/products/:id", async (req,res)=>{
+    const response = await axios.get(`https://skincare-api.herokuapp.com/products/${req.params.id}`);
+    console.log(response.data)
+    /* const productId = await response.findById(req.params.id); */
+    res.render("products/product-details", response.data);
 });
+
+
 
 //http://localhost:3000/books
 /* 
