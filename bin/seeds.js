@@ -56,5 +56,4 @@ const products = [
 
 Product.insertMany(products).then((productsFromDB) => {
     console.log(`products created - ${productsFromDB.length}`)
-})
-
+});
