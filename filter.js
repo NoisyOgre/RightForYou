@@ -2,12 +2,12 @@ const axios = require("axios");
 
 const skincareData = axios.get("https://skincare-api.herokuapp.com/products");
 
-const oilySkin = ["hyaluronic acid","retinol","salicylic acid","niacinamide","clay","grapeseed oil"];
+const bestOily = ["hyaluronic acid","retinol","salicylic acid","niacinamide","clay","grapeseed oil"];
 
-const normalSkin = [];
+const bestNormal = ["hyaluronic acid", "gliceryn",];
 
-const drySkin = [];
+const bestDry = [];
 
-const combinationSkin = [];
+const bestCombo = [];
 
-const sensitiveSkin = [];
+const bestSensitive = [];
