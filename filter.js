@@ -41,9 +41,7 @@ async function test() {
       if (!prdctIng.includes(i)) senSkin.push(list[i]);
     });
 
-    worstCombo.forEach((i) => {
-      if (!prdctIng.includes(i)) comboSkin.push(list[i]);
-    });
+    comboSkin = oilySkin.concat(drySkin);
 
     bestNormal.forEach((i) => {
       if (prdctIng.includes(i)) {
@@ -80,7 +78,9 @@ async function test() {
     }
   }
 
-  console.log(
+    
+
+  /* console.log(
     cleansers.length,
     moisturizers.length,
     toners.length,
@@ -93,12 +93,33 @@ async function test() {
     normalSkin.length,
     senSkin.length,
     comboSkin.length
-  );
+  ) */
+  
+  const filteredData = {
+      cleanser: cleansers,
+      moisturizers: moisturizers,
+      toners: toners,
+      serums: serums,
+      essence: essence,
+      sunProtection: sunProtection,
+      mask: mask,
+      oilySkin: oilySkin,
+      drySkin: drySkin,
+      normalSkin: normalSkin,
+      senSkin: senSkin,
+      comboSkin: comboSkin,
+
+  };
+
+  
+
+  return filteredData;
+  
 };
 
 
 
-test();
+test(); 
 
 
 
