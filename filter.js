@@ -197,8 +197,3 @@ const typeOfProduct = [
   "gel",
 ];
 
-function productFilter() {
-  let l = skincareList.length;
-  prdctName = skincareList.name;
-  for (let i = 0; i < l; i++) {}
-}
