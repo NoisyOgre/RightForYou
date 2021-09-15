@@ -5,6 +5,10 @@
 <img src="{{imageUrl}}" />
 {{/if}}
 <button><a href="/products/{{id}}/edit">Edit Product</a></button>
+<hr>
+<form action="/favorites/{{id}}" method="POST">
+<button class="addToFavBtn">Add to Favorites</button>
+</form>
 
 <hr>
 <p>Add a review</p>

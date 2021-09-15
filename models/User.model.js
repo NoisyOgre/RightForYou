@@ -7,7 +7,23 @@ const userSchema = new Schema({
     // unique: true -> Ideally, should be unique, but its up to you
   },
   password: String,
+  favorite:[
+        {
+         name: String,
+         },
+       ],
+      
 });
+
+//  const favSchema = new Schema({
+//    favorite:[
+//     {
+//      name: String,
+//      ingredient_list: String,
+//      brand: String
+//      },
+//    ],
+//  });
 
 const User = model("User", userSchema);
 

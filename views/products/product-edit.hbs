@@ -1,19 +1,12 @@
 <h1>Edit Product</h1>
-<form method="POST" action="/products/{{product.id}}/edit">
+<form method="POST" action="/products/{{id}}/edit">
     <label>Name</label>
-    <input type="text" name="name" value={{product.name}} />
+    <input type="text" name="name" value="{{name}}" />
     <label>Brand</label>
-    <select name="brand">
-        <input type="text" name="brand" value={{product.brand}} />
-        {{#each brand}} 
-        {{#eq name ../product.brand}}
-        <option value={{id}} selected>{{brand}}</option>
-        {{else}}
-        <option value={{id}}>{{brand}}</option>
-        {{/eq}}
-        {{/each}}
-    </select>
+    
+        <input type="text" name="brand" value="{{brand}}" />
+   
     <label>Ingredients</label>
     <textarea rows="5" cols="20" name="ingredient_list">{{ingredient_list}} </textarea>
-    <button type="submit">Update</button>
+    <button type="submit">Update</button>jnjnj
 </form>

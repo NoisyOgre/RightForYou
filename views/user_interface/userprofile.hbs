@@ -11,6 +11,21 @@
         <p>interactions</p>
     </div>
     <div class="cl-md-8">
-        <p>fave products</p>
+        <p>favorite products</p>
+        <ul>
+{{#each favProduct}}
+<li>
+    {{name}} 
+    <br/>
+    {{ingredient_list}}
+     <br/>
+     {{brand}}
+      <br/>
+    <form action="/userprofile/{{id}}/delete" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+    </li>
+    {{/each}}
+</ul>
     </div>
 </div>

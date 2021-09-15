@@ -1,7 +1,10 @@
 const router = require("express").Router();
 const Product = require("../models/Product.model");
+const User = require("../models/User.model");
 const fileUpload = require("../config/cloudinary");
 const axios = require("axios");
+
+const favs = [];
 
 function requireLogin(req, res, next) {
     if (req.session.currentUser) {
@@ -22,13 +25,13 @@ res.render("products/product-list", {products: response.data, added});
 
 router.get("/products/:id", async (req,res)=>{
     const response = await axios.get(`https://skincare-api.herokuapp.com/products/${req.params.id}`);
-    console.log(response.data)
+    
     /* const productId = await response.findById(req.params.id); */
     res.render("products/product-details", response.data);
 });
 router.get("/our-products/:id", async (req,res)=>{
     const product = await Product.findById(req.params.id);
-    console.log(product)
+    
     /* const productId = await response.findById(req.params.id); */
     res.render("products/product-details", product);
 });
@@ -75,8 +78,44 @@ router.post("/products/:id/edit", async (req, res) => {
     res.redirect("/products");
 });
 
+router.get("/favorites/:id", async (req, res) => {
+    res.render("products");
+});
 
-   
+router.post ("/favorites/:id", async (req, res) => {
+    const favProduct = await Product.findById(req.params.id);
+    await User.findByIdAndUpdate(req.session.currentUser._id, 
+        {$push: 
+            {favorite: {name: favProduct.name,}
+        }
+    });
+    console.log("The fave is ",favProduct)
+    res.render("user_interface/userprofile",{favProduct});
+});
+
+// router.post ("/favoritesApi/:name", async (req, res) => {
+    
+//     await User.findByIdAndUpdate(req.session.currentUser._id, 
+//         {$push: 
+//             {favorite: {name: req.params.name}
+//         }
+//     });
+
+
+//     res.render("user_interface/userprofile",{favProduct});
+// });
+
+// router.post("/favorites/:id/delete", async (req, res) => {
+//         await Product.findByIdAndRemove(req.params.id);
+//         res.redirect("/userprofile/");
+//     })
+
+
+  
+  
+  
+
+        
 
 
 

@@ -12,11 +12,11 @@
    </head>
 
    <body>
-      
+    
     <div> <a href="/">
       <img src="/images/rightforyoulogo.png" alt="page logo">
        </div>
-        
+     
     <div class="navigation">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -27,10 +27,21 @@
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page"  href="/">Home</a>
         <a class="nav-link" href="/products">All Products</a>
+        {{#if loggedInUser}}
         <a class="nav-link" href="/quiz1">Find my routine</a>
         <a class="nav-link" href="/myprofile">My Profile</a>
+         <a class="nav-link" href="/create-product">Add your product</a>
+         {{/if}}
         <a class="nav-link" href="/signup">Signup</a>
            <a class="nav-link"href="/login">Login</a>
+             {{#if loggedInUser}}
+   <form action="logout" method="POST">
+      <button type="submit">Logout</button>
+   </form>
+   <div class="user">
+      {{/if}}
+           {{#if loggedInUser}}<strong>{{loggedInUser}}</strong>{{/if}}
+        </div>       
       </div>
     </div>
   </div>
@@ -47,6 +58,6 @@
 
 
 
-
+ 
  
    
