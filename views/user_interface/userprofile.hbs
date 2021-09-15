@@ -13,14 +13,12 @@
     <div class="cl-md-8">
         <p>favorite products</p>
         <ul>
-{{#each favProduct}}
+{{#each favorite}}
 <li>
-    {{name}} 
-    <br/>
-    {{ingredient_list}}
-     <br/>
-     {{brand}}
-      <br/>
+    
+    <a href="/{{name}}">{{name}} </a>  
+    <br/> 
+    
     <form action="/userprofile/{{id}}/delete" method="POST">
         <button type="submit">Delete</button>
     </form>

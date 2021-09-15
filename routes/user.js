@@ -1,8 +1,12 @@
 const router = require("express").Router();
+const User = require("../models/User.model");
 
-router.get("/myprofile", (req,res)=>{
+router.get("/myprofile", async (req,res)=>{
 
-res.render("user_interface/userprofile");
+    const user = await User.findById(req.session.currentUser._id) //gives us all the users in an array
+    console.log(user.favorite);
+    
+res.render("user_interface/userprofile", user);
 });
 
 module.exports = router;

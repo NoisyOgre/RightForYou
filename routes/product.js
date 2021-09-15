@@ -90,7 +90,8 @@ router.post ("/favorites/:id", async (req, res) => {
         }
     });
     console.log("The fave is ",favProduct)
-    res.render("user_interface/userprofile",{favProduct});
+    /* res.render("user_interface/userprofile",{favProduct}); */
+    res.redirect("/myprofile");
 });
 
 // router.post ("/favoritesApi/:name", async (req, res) => {
