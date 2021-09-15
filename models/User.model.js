@@ -12,6 +12,12 @@ const userSchema = new Schema({
          name: String,
          },
        ],
+       comment:[
+        {
+         name: String,
+         comment: String
+         },
+       ],
       
 });
 
