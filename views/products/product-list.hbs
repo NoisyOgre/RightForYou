@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <container-fluid>
     <h1>Products list:</h1>
     <div class="row list">
@@ -30,3 +31,43 @@
         {{/each}}
     </div>
 </container-fluid>
+=======
+
+<h1>Products list</h1>
+
+<ul>
+{{#each added}}
+
+<li>
+    <a href="/our-products/{{id}}"> {{name}} </a>
+    <br/>
+    
+      {{#if loggedInUser}}
+      <form action="/products/{{id}}/delete" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+    {{/if}}
+</li>
+{{/each}}
+</ul>
+
+
+<ul>
+{{#each products}}
+
+<li>
+    <a href="products/{{id}}"> {{name}} </a>
+    <br/>
+    
+      
+</li>
+{{/each}}
+</ul>
+
+
+
+
+
+ 
+   
+>>>>>>> 878d7d0e3093c373d8712a6e0cb4e5b1fca44abd

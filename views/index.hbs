@@ -1,3 +1,35 @@
-{{#if loggedInUser}}
-      <p>Welcome {{loggedInUser}}</p>
-{{/if}}
+
+
+<div class="container">
+      <div class="row">
+            <div class="col-md-12">
+                  <div class="intro">
+                        
+                  {{#if loggedInUser}}
+                  <div class="introText">
+                        <h2>Welcome Back</h2>
+                        <h1>{{loggedInUser}}</h1>
+                        <br>
+                        <p>Great to see you again</p>
+                        <a href="/myprofile"><button type="button" class="btn btn-dark sm-lg">Go To My Profile</button></a>
+                        <a href="/quiz1"><button type="button" class="btn btn-dark sm-lg">Retake The Quiz</button></a>
+                  </div>
+                  {{else}}
+                  <div class="introText">
+                        <h1>Welcome</h1>
+                        <br>
+                        <p>This website is for anyone who is looking to find a skincare routine that fits their needs. Whether you are starting
+                              from scratch or not, we are here to help!</p>
+                        <br>
+
+                        <a href="quiz1"><button type="button" class="btn btn-dark btn-lg" href="/quiz1">Take The Quiz</button></a>
+                        
+                  </div>
+                 
+                 
+                  {{/if}}
+                  </div>
+            </div>
+      </div>
+
+</div>

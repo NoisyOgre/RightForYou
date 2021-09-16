@@ -1,13 +1,29 @@
-<h2>Signup</h2>
+
 <form action="/signup" method="POST">
-<label>Username</label>
-<input type="text" name="username" required/>
+<div class="container">
+        <div class="row">
+                <div class="col-md-12 signInBox">
+                    <div class="intro">
+                        <div class="introText">
+                            <h2>Signup</h2>
+                            <label>Username</label>
+                            <br>
+                            <input type="text" name="username" required />
+                            <br>
+                            <label>Password</label>
+                            <br>
+                            <input type="password" name="password" required />
+                            <br>
+                            <button type="submit" class="btn btn-dark sm-lg">Signup</button>
+                            <br>
+                            </form>
+                            {{#if errorMessage}}
+                            <p>{{errorMessage}}</p>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+        </div>
+ </div>
 
-<label>Password</label>
-<input type="password" name="password" required  />
 
-<button type="submit">Signup</button>
-</form>
-{{#if errorMessage}}
-<p>{{errorMessage}}</p>
-{{/if}}
