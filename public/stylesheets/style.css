@@ -6,23 +6,43 @@ body {
   background-size: cover;
 }
 
-.bodyThings{
+a:link {
+  color: coral !important;
+}
+
+a:visited {
+  color: coral !important;
+}
+
+a:hover {
+  color: rgb(46, 2, 2) !important;
+}
+
+.bodyThings {
   background-image: url("/images/Capturebg.PNG");
   background-repeat: no-repeat;
   background-size: cover;
-  height:589px;
-
+  height: 589px;
 }
 
 .header {
-
   display: flexbox;
   justify-content: space-evenly;
   /* position: fixed; */
 }
 
+.introText {
+  padding: 1.5% 1.5% 1.5% 1.5%;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: white;
+  opacity: 70%;
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: rgb(56, 23, 3);
+}
 
-.introText{
+.quizOne {
   padding: 1.5% 1.5% 1.5% 1.5%;
   margin-top: auto;
   margin-bottom: auto;
@@ -47,45 +67,73 @@ body {
   color: orange;
 }
 
+.addP {
+  padding-left: 5%;
+  padding-bottom: 1%;
+}
+
 .intro {
-  margin-top:5%;
+  margin-top: 5%;
   padding-top: 2%;
   margin-bottom: 5%;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
   width: 500px;
-  
 }
 
-.card-body{
-  display:flex;
+.smallQuiz {
+  padding-left: 35%;
+}
+
+.introQuizOne {
+  margin-top: 5%;
+  padding-top: 2%;
+  margin-bottom: 5%;
+  margin-right: auto;
+  margin-left: auto;
+  width: 500px;
+}
+
+.createBttn {
+  display: flex;
   justify-content: center;
 }
 
-.card-title{
+.updatePage {
+  padding-top: 1%;
+  background-color: peachpuff;
+  border: 2px solid;
+  border-radius: 10px;
+  opacity: 90%;
+  border-color: rgb(56, 23, 3);
+}
 
+.card-body {
+  display: flex;
+  justify-content: center;
+}
+
+.card-title {
   align-self: center;
 }
 
-.sessionNav{
+.sessionNav {
   margin-top: 3%;
   display: flex;
   justify-content: space-evenly;
   width: 380px;
 }
-.favs{
+.favs {
   background-color: red;
- 
-  }
+}
 
-.whole-profile{
- 
+.whole-profile {
   border: 2px solid;
   border-radius: 10px;
   border-color: rgb(56, 23, 3);
 }
-.profile-header{
+.profile-header {
   background-color: rgba(48, 29, 14, 0.808);
   border: 2px solid;
   border-radius: 10px;
@@ -94,31 +142,29 @@ body {
   color: white;
   text-align: center;
 }
-.fav-details{
+.fav-details {
   margin-left: 25%;
   margin-right: 25%;
 }
 
-.delete{
+.delete {
   margin-left: 38%;
   margin-right: 38%;
 }
 
-.favResults{
+.favResults {
   margin-left: 30%;
   margin-right: 30%;
 }
- 
-.list{
- 
+
+.list {
   height: 450px;
 }
 
-.pro{
+.pro {
   padding-left: 50px;
 }
 
-  
 label {
   -webkit-touch-callout: none;
   -webkit-user-select: none;

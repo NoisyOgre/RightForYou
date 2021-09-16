@@ -1,9 +1,26 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="intro">
+      <div class="introQuizOne">
         <div class="introText">
-
+<form action="/quiz2" method="POST">
+  <div class="smallQuiz">
+    <p>What is your skin type:</p>
+    <input type="radio" id="type" name="type" value="Normal">
+    <label for="type">Normal</label><br>
+    <input type="radio" id="type2" name="type" value="Dry">
+    <label for="type2">Dry</label><br>
+    <input type="radio" id="type" name="type" value="Oily">
+    <label for="type">Oily</label><br>
+    <input type="radio" id="type3" name="type" value="Combination">
+    <label for="type3">Combination</label><br>
+    <input type="radio" id="type4" name="type" value="Sensitive">
+    <label for="type4">Sensitive</label><br>
+    <input type="submit" value="Next" class="btn btn-dark sm-lg">
+    <br>
+</form>
+<br>
+</div>
         </div>
       </div>
     </div>
@@ -13,21 +30,3 @@
 
 
 
-<form action="/quiz2" method="POST">
-  <div>
-    <p>What is your skin type:</p>
-
-    <input type="radio" id="type" name="type" value="Normal">
-    <label for="type">Normal</label><br>
-    <input type="radio" id="type2" name="type" value="Dry">
-    <label for="type2">Dry</label><br>
-    <input type="radio" id="type" name="type" value="Oily">
-    <label for="type">Oily</label>
-    <input type="radio" id="type3" name="type" value="Combination">
-    <label for="type3">Combination</label>
-    <input type="radio" id="type4" name="type" value="Sensitive">
-    <label for="type4">Sensitive</label>
-    <input type="submit" value="Next">
-</form>
-<br>
-</div>
