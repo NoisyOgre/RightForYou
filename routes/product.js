@@ -94,6 +94,22 @@ router.post ("/favorites/:id", async (req, res) => {
     res.redirect("/myprofile");
 });
 
+router.get("/comments/:id", async (req, res) => {
+    res.render("products");
+});
+
+router.post ("/comments/:id", async (req, res) => {
+    const myComment = await Product.findById(req.params.id);
+    await User.findByIdAndUpdate(req.session.currentUser._id, 
+        {$push: 
+            {comment: {name: myComment.comment,}
+        }
+    });
+    console.log("The fave is ",favProduct)
+    /* res.render("user_interface/userprofile",{favProduct}); */
+    res.redirect("/myprofile");
+});
+
 // router.post ("/favoritesApi/:name", async (req, res) => {
     
 //     await User.findByIdAndUpdate(req.session.currentUser._id, 
