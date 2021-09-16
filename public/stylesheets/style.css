@@ -72,45 +72,7 @@ body {
   height: 450px;
 }
 
-<<<<<<< HEAD
   
-=======
-.sessionNav {
-  width: 370px;
-  margin-top: 3%;
-  margin-right: 0%;
-  /*   margin-right: 5%; */
-  display: flex;
-  justify-content: flex-end;
-}
-
-.nav-link {
-  color: coral;
-  justify-self: flex-end;
-}
-
-.loginBox {
-  display:flex;
-  justify-content: center;
-}
-
-
-
-.footer {
-  position: absolute;
-}
-
-a {
-  color: #00b7ff;
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  margin-left:1%;
-}
-
->>>>>>> 878d7d0e3093c373d8712a6e0cb4e5b1fca44abd
 label {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
