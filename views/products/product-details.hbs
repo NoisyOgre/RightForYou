@@ -1,5 +1,8 @@
-
-
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="intro">
+                <div class="introText">
 <h1>{{name}}</h1>
 <p>Ingredients: {{ingredient_list}}</p>
 <p> Brand : {{brand}}</p>
@@ -10,7 +13,7 @@
 <hr>
 <form action="/favorites/{{id}}" method="POST">
     <button class="addToFavBtn">Add to Favorites</button>
-</form>   
+</form>
 </body>
 
 <hr>
@@ -28,3 +31,11 @@
 {{#each comments}}
 <p>{{name}} - "{{comment}}"</p>
 {{/each}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

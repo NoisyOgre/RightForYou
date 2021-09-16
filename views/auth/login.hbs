@@ -1,13 +1,30 @@
-<h2>Login</h2>
-<form action="/login" method="POST">
-<label>Username</label>
-<input type="text" name="username" required/>
 
-<label>Password</label>
-<input type="password" name="password" required  />
-
-<button type="submit">Login</button>
-</form>
-{{#if errorMessage}}
-<p>{{errorMessage}}</p>
-{{/if}}
+<div class="cointaner">
+    <div class="row">
+        <div class="col-md-12 loginBox">
+            <div class="intro">
+                <div class="introText">
+                    <form action="/login" method="POST">
+                        <h2>Login</h2>
+                        <label>Username:</label>
+                        <br>
+                        <input type="text" name="username" required />
+                        <br>
+                        <label>Password:</label>
+                        <br>
+                        <input type="password" name="password" required />
+                        <br>
+                        <button type="submit" class="btn btn-dark sm-lg">Login</button>
+                        <br>
+                        {{#if errorMessage}}
+                        <p>{{errorMessage}}</p>
+                        {{/if}}
+                        <br>
+                        <a href="/signup">Don't have an account? Sign Up Here!</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 

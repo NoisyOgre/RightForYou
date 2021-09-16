@@ -1,19 +1,95 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(92, 70, 50);
+  background-color: rgb(245, 240, 240);
+  background-size: cover;
+}
+
+.bodyThings{
+  background-image: url("/images/Capturebg.PNG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:589px;
+}
+.header {
+
+  display: flexbox;
+  justify-content: space-evenly;
+  /* position: fixed; */
+}
+
+
+.introText{
+  padding: 1.5% 1.5% 1.5% 1.5%;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: white;
+  opacity: 70%;
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: rgb(56, 23, 3);
+}
+
+.permanentLinks {
+  margin-top: 3%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navigation {
+  color: orange;
+}
+
+.intro {
+  margin-top:5%;
+  padding-top: 2%;
+  margin-bottom: 5%;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  width: 500px;
+  
+}
+
+.sessionNav {
+  width: 370px;
+  margin-top: 3%;
+  margin-right: 0%;
+  /*   margin-right: 5%; */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-link {
+  color: coral;
+  justify-self: flex-end;
+}
+
+.loginBox {
+  display:flex;
+  justify-content: center;
+}
+
+
+
+.footer {
+  position: absolute;
 }
 
 a {
   color: #00b7ff;
 }
 
-
-
-
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-left:1%;
+}
 
 label {
   -webkit-touch-callout: none;
-  -webkit-user-select: none; 
+  -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
