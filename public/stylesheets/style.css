@@ -6,11 +6,28 @@ body {
 a {
   color: #00b7ff;
 }
+.favs{
+  background-color: red;
+ 
+  }
+.fav-details{
+  margin-left: 25%;
+  margin-right: 25%;
+}
+.delete{
+  margin-left: 38%;
+  margin-right: 38%;
+}
+.favResults{
+  margin-left: 30%;
+  margin-right: 30%;
+}
+ 
+.list{
+  height: 450px;
+}
 
-
-
-
-
+  
 label {
   -webkit-touch-callout: none;
   -webkit-user-select: none; 

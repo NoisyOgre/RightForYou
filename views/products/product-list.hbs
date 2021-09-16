@@ -1,37 +1,32 @@
-<h1>Products list</h1>
-
-<ul>
-{{#each added}}
-
-<li>
-    <a href="/our-products/{{id}}"> {{name}} </a>
-    <br/>
-    
-      {{#if loggedInUser}}
-      <form action="/products/{{id}}/delete" method="POST">
-        <button type="submit">Delete</button>
-    </form>
-    {{/if}}
-</li>
-{{/each}}
-</ul>
+<container-fluid>
+    <h1>Products list:</h1>
+    <div class="row list">
+        {{#each added}}
+        <div class="col-md-4 list">
+            <div class="card" style="width: 18rem;">
+                <img src="/images/products.jpg" class="card-img-top" alt="Our Products">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <a href="/our-products/{{id}}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
 
 
-<ul>
-{{#each products}}
+        </div>
+        {{/each}}
+    </div>
+    <div class="row">
+        {{#each products}}
+        <div class="col-md-4 list">
+            <div class="card" style="width: 18rem;">
+                <img src="/images/products.jpg" class="card-img-top" alt="Our Products">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <a href="/our-products/{{id}}" class="btn btn-primary">View detail</a>
+                </div>
+            </div>
 
-<li>
-    <a href="products/{{id}}"> {{name}} </a>
-    <br/>
-    
-      
-</li>
-{{/each}}
-</ul>
-
-
-
-
-
- 
-   
+        </div>
+        {{/each}}
+    </div>
+</container-fluid>
