@@ -29,7 +29,7 @@ router.post("/signup", async (req, res) => {
         username,
         password: hashedPassword,
     });
-    res.redirect("/");
+    res.redirect("/login");
 });
 
 
