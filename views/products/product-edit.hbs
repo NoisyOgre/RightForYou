@@ -1,12 +1,51 @@
-<h1>Edit Product</h1>
-<form method="POST" action="/products/{{id}}/edit">
-    <label>Name</label>
-    <input type="text" name="name" value="{{name}}" />
-    <label>Brand</label>
-    
-        <input type="text" name="brand" value="{{brand}}" />
-   
-    <label>Ingredients</label>
-    <textarea rows="5" cols="20" name="ingredient_list">{{ingredient_list}} </textarea>
-    <button type="submit">Update</button>
-</form>
+<div class="container">
+
+
+    <div class="updatePage">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="intro">
+                    <div class="introText">
+                        <h1>Update Product</h1>
+                        <p>Is the information out of date? 
+                            Help us, help you, by updating it!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form action="/products/{{id}}/edit" method="POST" enctype="multipart/form-data"></form>
+        <div class="row addP">
+            <div class="col-md-3 create">
+                <label>Name:</label>
+                <br>
+                <input type="text" name="name" value="{{name}}"/>
+
+            </div>
+            <div class="col-md-3 create">
+                <label>Brand:</label>
+                <br>
+                <input type="text" name="brand" value="{{brand}}"/>
+            </div>
+            <div class="col-md-3 create">
+                <label>Image:</label>
+                <input type="file" name="image" />
+
+            </div>
+            <div class="col-md-2">
+                <label>Ingredients:</label>
+                <br>
+                <textarea rows="5" cols="20" name="ingredient_list">{{ingredient_list}}</textarea>
+                <br>
+
+            </div>
+        </div>
+        <div class="row addP">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 createBttn"><button type="submit" class="btn btn-dark btn-lg">Update</button></div>
+            <div class="col-md-4"></div>
+        </div>
+        </form>
+    </div>
+
+
