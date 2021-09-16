@@ -21,18 +21,19 @@
         {{#each favorites}}
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
+                <h5 class="favResults">{{name}}</h5>
                 <img src="/images/products.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <p class="favResults">{{name}}</p>
+                    
                     <div class="fav-details">
                         <form action="/our-products/{{id}}" method="POST">
-                            <button class="btn btn-outline-danger sm-lg">Product Details</button>
+                            <button class="btn btn-outline-danger sm-lg"> ViewDetails</button>
                     </div>
                 </div>
                 <div class="delete">
                     <form>
                         <form action="/favorites/{{id}}/delete" method="POST">
-                            <button type="submit" class="btn btn-outline-danger sm-lg">Delete</button>
+                            <button type="submit" class="btn btn-outline-danger sm-lg">Remove</button>
                 </div>
                 </form>
             </div>
