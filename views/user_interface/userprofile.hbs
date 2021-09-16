@@ -3,16 +3,14 @@
     <div class="row">
         <div class="col-md-4">
             <div class="col-md-8 my-routines ">
-                <p>All My Routines</p>
                 {{#each favorites}}
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">Routine</h5>
                         <p class="card-text">You Chose the routine(s) as the best for you.</p>
-                        <a href="https://www.sephora.com/shop/skincare" class="card-link">Buy potential products
-                            here</a>
+                        <a href="https://www.sephora.com/shop/skincare" class="card-link"><button type="submit" class="btn btn-outline-danger sm-lg">Buy Here</button></a>
                         <form action="/favorites/{{id}}/delete" method="POST">
-                            <button type="submit">Delete</button>
+                            <button type="submit" class="btn btn-outline-danger sm-lg">Delete</button>
                     </div>
                 </div>
                 {{/each}}
@@ -20,7 +18,6 @@
         </div>
     </div>
     <div class="row">
-        <p>favorite products</p>
         {{#each favorites}}
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
@@ -29,13 +26,13 @@
                     <p class="favResults">{{name}}</p>
                     <div class="fav-details">
                         <form action="/our-products/{{id}}" method="POST">
-                            <button class="addToFavBtn">Product Details</button>
+                            <button class="btn btn-outline-danger sm-lg">Product Details</button>
                     </div>
                 </div>
                 <div class="delete">
                     <form>
                         <form action="/favorites/{{id}}/delete" method="POST">
-                            <button type="submit">Delete</button>
+                            <button type="submit" class="btn btn-outline-danger sm-lg">Delete</button>
                 </div>
                 </form>
             </div>

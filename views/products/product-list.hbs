@@ -1,14 +1,15 @@
-<<<<<<< HEAD
 <container-fluid>
-    <h1>Products list:</h1>
-    <div class="row list">
+    <br>
+    <div class="row">
         {{#each added}}
-        <div class="col-md-4 list">
+        <div class="col-md-4 list pro">
             <div class="card" style="width: 18rem;">
+                <h5 class="card-title">{{name}}</h5>
                 <img src="/images/products.jpg" class="card-img-top" alt="Our Products">
                 <div class="card-body">
-                    <h5 class="card-title">{{name}}</h5>
-                    <a href="/our-products/{{id}}" class="btn btn-primary">View Details</a>
+                   
+                    <br>
+                    <a href="/our-products/{{id}}" class="btn btn-outline-danger">View Details</a>
                 </div>
             </div>
 
@@ -18,12 +19,13 @@
     </div>
     <div class="row">
         {{#each products}}
-        <div class="col-md-4 list">
+        <div class="col-md-4 list pro">
             <div class="card" style="width: 18rem;">
+                <h5 class="card-title">{{name}}</h5>
                 <img src="/images/products.jpg" class="card-img-top" alt="Our Products">
                 <div class="card-body">
-                    <h5 class="card-title">{{name}}</h5>
-                    <a href="/our-products/{{id}}" class="btn btn-primary">View detail</a>
+                    <br>
+                    <a href="/our-products/{{id}}" class="btn btn-outline-danger">View detail</a>
                 </div>
             </div>
 
@@ -31,43 +33,3 @@
         {{/each}}
     </div>
 </container-fluid>
-=======
-
-<h1>Products list</h1>
-
-<ul>
-{{#each added}}
-
-<li>
-    <a href="/our-products/{{id}}"> {{name}} </a>
-    <br/>
-    
-      {{#if loggedInUser}}
-      <form action="/products/{{id}}/delete" method="POST">
-        <button type="submit">Delete</button>
-    </form>
-    {{/if}}
-</li>
-{{/each}}
-</ul>
-
-
-<ul>
-{{#each products}}
-
-<li>
-    <a href="products/{{id}}"> {{name}} </a>
-    <br/>
-    
-      
-</li>
-{{/each}}
-</ul>
-
-
-
-
-
- 
-   
->>>>>>> 878d7d0e3093c373d8712a6e0cb4e5b1fca44abd

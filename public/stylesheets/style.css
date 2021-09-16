@@ -11,7 +11,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height:589px;
+
 }
+
 .header {
 
   display: flexbox;
@@ -41,6 +43,10 @@ body {
   color: orange;
 }
 
+.nav-link {
+  color: orange;
+}
+
 .intro {
   margin-top:5%;
   padding-top: 2%;
@@ -51,25 +57,50 @@ body {
   width: 500px;
   
 }
+
+.card-body{
+  display:flex;
+  justify-content: center;
+}
+
+.card-title{
+
+  align-self: center;
+}
+
+.sessionNav{
+  margin-top: 3%;
+  display: flex;
+  justify-content: space-evenly;
+  width: 380px;
+}
 .favs{
   background-color: red;
  
   }
+
 .fav-details{
   margin-left: 25%;
   margin-right: 25%;
 }
+
 .delete{
   margin-left: 38%;
   margin-right: 38%;
 }
+
 .favResults{
   margin-left: 30%;
   margin-right: 30%;
 }
  
 .list{
+ 
   height: 450px;
+}
+
+.pro{
+  padding-left: 50px;
 }
 
   
