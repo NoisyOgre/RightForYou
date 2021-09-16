@@ -1,5 +1,8 @@
 const router = require("express").Router();
 const User = require("../models/User.model");
+const test = require("../filter.js");
+
+
 
 router.get("/myprofile", async (req,res)=>{
 
@@ -9,5 +12,7 @@ router.get("/myprofile", async (req,res)=>{
     
 res.render("user_interface/userprofile", user);
 });
+
+
 
 module.exports = router;
