@@ -7,18 +7,12 @@ const userSchema = new Schema({
     // unique: true -> Ideally, should be unique, but its up to you
   },
   password: String,
-  favorite:[
+  favorites:[
         {
-         name: String,
+          type: Schema.Types.ObjectId,
+          ref:"Product",
          },
-       ],
-       comment:[
-        {
-         name: String,
-         comment: String
-         },
-       ],
-      
+       ],     
 });
 
 //  const favSchema = new Schema({

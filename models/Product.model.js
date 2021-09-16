@@ -7,6 +7,12 @@ const productSchema = mongoose.Schema(
     name: String,
     ingredient_list: Array,
     imageUrl: String,
+    comments: [
+      {
+        name: String,
+        comment: String,
+      }
+    ]
   },
   {
   timestamp: true,
