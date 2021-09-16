@@ -1,25 +1,121 @@
 <h1>My Routine</h1>
+{{#if oily}}
 <div class="row">
-    {{#if time==="ten"}}
+    <p>Oily skin produces more oil than other skin types, so you should make sure to clean it regularly to avoid clogging of pores that may lead to blackheads, acne, blemishes and in the long term, enlargement of pores.</p>
 <div class="col-md-4">
-    <p>Cleanse</p>
+    <h5>Cleanse</h5>
+    <img src="/images/products.jpg" alt="product img" height="250"/>
+    <p>{{type.cleansers.0.name}}</p>
 
 </div>
 <div class="col-md-4">
-    <p>Moisturize</p>
-
+    <h5>Moisturize</h5>
+    <img src="/images/products.jpg" alt="product img" height="250" />
+    <p>{{type.moisturizers.0.name}}</p>
 </div>
 <div class="col-md-4">
-    <p>Protect</p>
-
+    <h5>Protect</h5>
+    <img src="/images/products.jpg" alt="product img" height="250" />
+    <p>{{type.sunProtection.0.name}}</p>
 </div>
+{{/if}}
+
+{{#if dry}}
+<div class="row">
+    <p>Dry skin has a harder time retaining moisture, because it does not produce as much natural oils. This makes this skin type more vulnerable to wind, dust or sunlight. As a consequence the skin can often feel itchy, tight or flacky and in the long run this can lead to early aging.</p>
+    <div class="col-md-4">
+        <h5>Cleanse</h5>
+<img href="/images/products.jpg" alt="product img" />
+        <p>{{type.cleansers.0.name}}</p>
+
+    </div>
+    <div class="col-md-4">
+        <h5>Moisturize</h5>
+        <img href="/images/products.jpg" alt="product img" />
+        <p>{{type.moisturizers.0.name}}</p>
+    </div>
+    <div class="col-md-4">
+        <h5>Protect</h5>
+        <img href="/images/products.jpg" alt="product img" />
+        <p>{{type.sunProtection.0.name}}</p>
+    </div>
+{{/if}}
+
+{{#if combination}}
+<div class="row">
+    <p>Dry skin has a harder time retaining moisture, because it does not produce as much natural oils. This makes this
+        skin type more vulnerable to wind, dust or sunlight. As a consequence the skin can often feel itchy, tight or
+        flacky and in the long run this can lead to early aging.</p>
+    <div class="col-md-4">
+        <h5>Cleanse</h5>
+        <img href="/images/products.jpg" alt="product img" />
+        <p>{{type.cleansers.0.name}}</p>
+
+    </div>
+    <div class="col-md-4">
+        <h5>Moisturize</h5>
+        <img href="/images/products.jpg" alt="product img" />
+        <p>{{type.moisturizers.0.name}}</p>
+    </div>
+    <div class="col-md-4">
+        <h5>Protect</h5>
+        <img href="/images/products.jpg" alt="product img" />
+        <p>{{type.sunProtection.0.name}}</p>
+    </div>
     {{/if}}
+
+{{#if sensitive}}
+<div class="row">
+    <p>Dry skin has a harder time retaining moisture, because it does not produce as much natural oils. This makes this
+        skin type more vulnerable to wind, dust or sunlight. As a consequence the skin can often feel itchy, tight or
+        flacky and in the long run this can lead to early aging.</p>
+    <div class="col-md-4">
+        <h5>Cleanse</h5>
+        <img href="/images/products.jpg" alt="product img" />
+        <p>{{type.cleansers.0.name}}</p>
+
+    </div>
+    <div class="col-md-4">
+        <h5>Moisturize</h5>
+        <p>{{type.moisturizers.0.name}}</p>
+    </div>
+    <div class="col-md-4">
+        <h5>Protect</h5>
+        <p>{{type.sunProtection.0.name}}</p>
+    </div>
+    {{/if}}
+
+    {{#if normal}}
+    <div class="row">
+        <p>Dry skin has a harder time retaining moisture, because it does not produce as much natural oils. This makes this
+            skin type more vulnerable to wind, dust or sunlight. As a consequence the skin can often feel itchy, tight or
+            flacky and in the long run this can lead to early aging.</p>
+        <div class="col-md-4">
+            <h5>Cleanse</h5>
+            <p>{{type.cleansers.0.name}}</p>
+    
+        </div>
+        <div class="col-md-4">
+            <h5>Moisturize</h5>
+            <p>{{type.moisturizers.0.name}}</p>
+        </div>
+        <div class="col-md-4">
+            <h5>Protect</h5>
+            <p>{{type.sunProtection.0.name}}</p>
+        </div>
+        {{/if}}
+     
    
 </div>
 <div class="row">
-    <p>Based on your goals for your skin, here are some more product recommendations:</p>
+    <h3>Based on your goals for your skin, here are some more product recommendations:</h3>
     
-    <div class="col-md-12">
+    
+        {{#each type.serums}}
+        <div class="col-md-4"></div>
+        <p>{{name}} by {{brand}}</p>
+        </div>
+        {{/each}}
         
-    </div>
+    
 </div>

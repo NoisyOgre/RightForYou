@@ -19,8 +19,8 @@ async function test() {
 
   for (let i = 0; i < list.length; i++) {
     prdctName = list[i].name;
-
     prdctIng = list[i].ingredient_list;
+
     // by skin type
     worstOily.forEach((ingredient) => {
       prdctIng.includes(ingredient);
@@ -36,94 +36,228 @@ async function test() {
       }
     });
 
-    worstSensitive.forEach((i) => {
-      prdctIng.includes(i);
-      if (!prdctIng.includes(i)) senSkin.push(list[i]);
+    worstSensitive.forEach((ing) => {
+      prdctIng.includes(ing);
+
+      if (!prdctIng.includes(ing)) {
+        senSkin.push(list[i]);
+      }
     });
 
     comboSkin = oilySkin.concat(drySkin);
 
-    bestNormal.forEach((i) => {
-      if (prdctIng.includes(i)) {
-        normalSkin.push(list[i]);
-      }
-    });
-    // by product
+    normalSkin = comboSkin.concat(senSkin);
+  }
+  // by product for each skintype
+  const oily = {};
+  cleansersOily = [];
+  moisturizersOily = [];
+  tonersOily = [];
+  serumsOily = [];
+  essenceOily = [];
+  sunProtectionOily = [];
+  maskOily = [];
+
+  for (i = 0; i < oilySkin.length; i++) {
+    prdctName = oilySkin[i].name;
+
     if (prdctName.includes("spf")) {
-      sunProtection.push(list[i]);
+      sunProtectionOily.push(oilySkin[i]);
     }
 
     if (prdctName.includes("clean")) {
-      cleansers.push(list[i]);
+      cleansersOily.push(oilySkin[i]);
     }
 
     if (prdctName.includes("moistur")) {
-      moisturizers.push(list[i]);
+      moisturizersOily.push(oilySkin[i]);
     }
 
     if (prdctName.includes("tone")) {
-      toners.push(list[i]);
+      tonersOily.push(oilySkin[i]);
     }
 
     if (prdctName.includes("serum")) {
-      serums.push(list[i]);
+      serumsOily.push(oilySkin[i]);
     }
 
     if (prdctName.includes("essence")) {
-      essence.push(list[i]);
+      essenceOily.push(oilySkin[i]);
     }
 
     if (prdctName.includes("mask")) {
-      mask.push(list[i]);
+      maskOily.push(oilySkin[i]);
     }
   }
 
-    
+  oily.cleansers = cleansersOily;
+  oily.moisturizers = moisturizersOily;
+  oily.toners = tonersOily;
+  oily.serums = serumsOily;
+  oily.essence = essenceOily;
+  oily.sunProtection = sunProtectionOily;
+  oily.mask = maskOily;
 
-  console.log(
-    cleansers.length,
-    moisturizers.length,
-    toners.length,
-    serums.length,
-    essence.length,
-    sunProtection.length,
-    mask.length,
-    oilySkin.length,
-    drySkin.length,
-    normalSkin.length,
-    senSkin.length,
-    comboSkin.length
-  )
-  
-  const filteredData = {
-      cleanser: cleansers,
-      moisturizers: moisturizers,
-      toners: toners,
-      serums: serums,
-      essence: essence,
-      sunProtection: sunProtection,
-      mask: mask,
-      oilySkin: oilySkin,
-      drySkin: drySkin,
-      normalSkin: normalSkin,
-      senSkin: senSkin,
-      comboSkin: comboSkin,
+  const dry = {};
+  cleansersDry = [];
+  moisturizersDry = [];
+  tonersDry = [];
+  serumsDry = [];
+  essenceDry = [];
+  sunProtectionDry = [];
+  maskDry = [];
 
+  for (i = 0; i < drySkin.length; i++) {
+    prdctName = drySkin[i].name;
+
+    if (prdctName.includes("spf")) {
+      sunProtectionDry.push(drySkin[i]);
+    }
+
+    if (prdctName.includes("clean")) {
+      cleansersDry.push(drySkin[i]);
+    }
+
+    if (prdctName.includes("moistur")) {
+      moisturizersDry.push(drySkin[i]);
+    }
+
+    if (prdctName.includes("tone")) {
+      tonersDry.push(drySkin[i]);
+    }
+
+    if (prdctName.includes("serum")) {
+      serumsDry.push(drySkin[i]);
+    }
+
+    if (prdctName.includes("essence")) {
+      essenceDry.push(drySkin[i]);
+    }
+
+    if (prdctName.includes("mask")) {
+      maskDry.push(drySkin[i]);
+    }
+  }
+
+  dry.cleansers = cleansersDry;
+  dry.moisturizers = moisturizersDry;
+  dry.toners = tonersDry;
+  dry.serums = serumsDry;
+  dry.essence = essenceDry;
+  dry.sunProtection = sunProtectionDry;
+  dry.mask = maskDry;
+
+  const combo = {
+    oily: oily,
+    dry: dry,
   };
 
-  
+  const sensitive = {};
+  cleansersSen = [];
+  moisturizersSen = [];
+  tonersSen = [];
+  serumsSen = [];
+  essenceSen = [];
+  sunProtectionSen = [];
+  maskSen = [];
+
+  for (i = 0; i < senSkin.length; i++) {
+    prdctName = senSkin[i].name;
+
+    if (prdctName.includes("spf")) {
+      sunProtectionSen.push(senSkin[i]);
+    }
+
+    if (prdctName.includes("clean")) {
+      cleansersSen.push(senSkin[i]);
+    }
+
+    if (prdctName.includes("moistur")) {
+      moisturizersSen.push(senSkin[i]);
+    }
+
+    if (prdctName.includes("tone")) {
+      tonersSen.push(senSkin[i]);
+    }
+
+    if (prdctName.includes("serum")) {
+      serumsSen.push(senSkin[i]);
+    }
+
+    if (prdctName.includes("essence")) {
+      essenceSen.push(senSkin[i]);
+    }
+
+    if (prdctName.includes("mask")) {
+      maskSen.push(senSkin[i]);
+    }
+  }
+
+  sensitive.cleansers = cleansersSen;
+  sensitive.moisturizers = moisturizersSen;
+  sensitive.toners = tonersSen;
+  sensitive.serums = serumsSen;
+  sensitive.essence = essenceSen;
+  sensitive.sunProtection = sunProtectionSen;
+  sensitive.mask = maskSen;
+
+  const normal = {};
+  cleansersNor = [];
+  moisturizersNor = [];
+  tonersNor = [];
+  serumsNor = [];
+  essenceNor = [];
+  sunProtectionNor = [];
+  maskNor = [];
+
+  for (i = 0; i < normalSkin.length; i++) {
+    prdctName = normalSkin[i].name;
+
+    if (prdctName.includes("spf")) {
+      sunProtectionNor.push(normalSkin[i]);
+    }
+
+    if (prdctName.includes("clean")) {
+      cleansersNor.push(normalSkin[i]);
+    }
+
+    if (prdctName.includes("moistur")) {
+      moisturizersNor.push(normalSkin[i]);
+    }
+
+    if (prdctName.includes("tone")) {
+      tonersNor.push(normalSkin[i]);
+    }
+
+    if (prdctName.includes("serum")) {
+      serumsNor.push(normalSkin[i]);
+    }
+
+    if (prdctName.includes("essence")) {
+      essenceNor.push(normalSkin[i]);
+    }
+
+    if (prdctName.includes("mask")) {
+      maskNor.push(normalSkin[i]);
+    }
+  }
+
+  normal.cleansers = cleansersNor;
+  normal.moisturizers = moisturizersNor;
+  normal.toners = tonersNor;
+  normal.serums = serumsNor;
+  normal.essence = essenceNor;
+  normal.sunProtection = sunProtectionNor;
+  normal.mask = maskNor;
+
+  filteredData = [oily, dry, combo, sensitive, normal];
+
+  console.log("The data has been filtered successfully!");
 
   return filteredData;
-  
-};
+}
 
-
-
-test(); 
-
-
-
-
+test();
 /* const skincareList = skincareData.data; */
 
 const bestOily = [
@@ -155,9 +289,6 @@ const bestNormal = [
   "lineleic acid",
   "alpha linoleic acid",
   "oleic acid",
-  "omega-6",
-  "omega-3",
-  "omega-9",
   "buriti oil",
 ];
 

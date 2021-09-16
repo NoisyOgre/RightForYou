@@ -42,25 +42,39 @@ router.post("/quiz3", (req, res) => {
 
 router.get("/my-personal-routine", async (req, res) => {
   let filteredData = await test();
-  result.cleansers = filteredData.cleansers;
+
+  /* result.cleansers = filteredData.cleansers;
   result.moisturizers = filteredData.moisturizers;
   result.sunProtection = filteredData.sunProtection;
+ */
+
+  /* console.log(filteredData.cleansers) */
+  /* result.cleanserSug = filteredData.cleansers[random]; */
+  /*  random = getRandomInt(300);
+  result.moisturizerSug = filteredData.moisturizers[random];
+  random = getRandomInt(300);
+  result.sunProSug = filteredData.sunProtection[random]; */
 
   switch (preferences.type) {
     case "normal":
-      result.type = filteredData.normalSkin;
+      result.type = filteredData[4];
+      result.normal = true;
       break;
     case "oily":
-      result.type = filteredData.oilySkin;
+      result.type = filteredData[0];
+      result.oily = true;
       break;
     case "dry":
-      result.type = filteredData.drySkin;
+      result.type = filteredData[1];
+      result.dry = true;
       break;
     case "combination":
-      result.type = filteredData.comboSkin;
+      result.type = filteredData[2];
+      result.combination = true;
       break;
     case "sensitive":
-      result.type = filteredData.senSkin;
+      result.type = filteredData[3];
+      result.sensitive = true;
       break;
   }
 
@@ -82,18 +96,13 @@ router.get("/my-personal-routine", async (req, res) => {
       break;
     case "thirty":
       result.steps = 6;
-      result.toners = filteredData.toners;
-      result.serums = filteredData.serums;
-      result.essence = filteredData.essence;
       break;
     case "thirtyPlus":
       result.steps = 10;
-      result.mask = filteredData.mask;
       break;
   }
 
   res.render("user_interface/myroutinefull", result);
-  
 });
 
 module.exports = router;
