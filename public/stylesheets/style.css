@@ -79,6 +79,21 @@ body {
  
   }
 
+.whole-profile{
+ 
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: rgb(56, 23, 3);
+}
+.profile-header{
+  background-color: rgba(48, 29, 14, 0.808);
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: rgb(56, 23, 3);
+  opacity: 80%;
+  color: white;
+  text-align: center;
+}
 .fav-details{
   margin-left: 25%;
   margin-right: 25%;
