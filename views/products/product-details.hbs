@@ -1,39 +1,52 @@
-
 <div class="updatePage productDet">
-<h1>{{name}}</h1>
-<p>Ingredients: {{ingredient_list}}</p>
-<p> Brand : {{brand}}</p>
-{{#if imageUrl}}
-<img src="{{imageUrl}}" />
-{{/if}}
+    <h1>{{name}}</h1>
+    <p>Ingredients: {{ingredient_list}}</p>
+    <p> Brand : {{brand}}</p>
+    {{#if imageUrl}}
+    <img src="{{imageUrl}}" />
+    {{/if}}
 
-<hr>
-<div class="row">
-    <div class="col-md-6">
-        <a href="/products/{{id}}/edit"><button class="btn btn-dark sm-lg">Edit Product</button></a>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <a href="/products/{{id}}/edit"><button class="btn btn-dark sm-lg">Edit Product</button></a>
+        </div>
+        <div class="col-md-6">
+            <form action="/favorites/{{id}}" method="POST">
+                <button class="btn btn-dark sm-lg">Add to Favorites</button>
+            </form>
+        </div>
     </div>
-    <div class="col-md-6">
-<form action="/favorites/{{id}}" method="POST">
-    <button class="btn btn-dark sm-lg">Add to Favorites</button>
-</form>
+
+    <hr>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <form action="/comments/{{id}}" method="POST">
+                <label>Name</label>
+                <input type="text" name="name" />
+        </div>
+        <div class="col-md-6">
+            <label>Comment</label>
+            <textarea name="comment" cols="40" rows="1"></textarea>
+            </form>
+        </div>
     </div>
+    <div class="row">
+        <div class="col-md-12 addAReview">
+            <button type="submit" class="btn btn-dark sm-lg">Add review</button>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        {{#each comments}}
+        <div class="col-md-12">
+            <p>{{name}} - "{{comment}}"</p>
+        </div>
+        {{/each}}
+    </div>
+
 </div>
-
-<hr>
-
-<p>Add a review</p>
-<form action="/comments/{{id}}" method="POST">
-    <label>Name</label>
-    <input type="text" name="name" />
-
-    <label>Comment</label>
-    <textarea name="comment" cols="40" rows="7"></textarea>
-
-    <button type="submit">Add review</button>
-</form>
-<hr>
-{{#each comments}}
-<p>{{name}} - "{{comment}}"</p>
-{{/each}}
-</div>
-

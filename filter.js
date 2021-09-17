@@ -257,7 +257,7 @@ async function test() {
   return filteredData;
 }
 
-test();
+
 /* const skincareList = skincareData.data; */
 
 const bestOily = [

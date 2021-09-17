@@ -1,54 +1,49 @@
 <div class="container">
-    
 
-<div class="updatePage">
-<div class="row">
-    <div class="col-md-12">
-        <div class="intro">
-            <div class="introText">
-                <h1>Add a product</h1>
-                <p>The skincare market is ever evolving. Discovered a new product that is not in our database? Help us, help you, by introducing it in!</p>
+
+    <div class="updatePage">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="intro">
+                    <div class="introText">
+                        <h1>Add a product</h1>
+                        <p>The skincare market is ever evolving. Discovered a new product that is not in our database?
+                            Help us, help you, by introducing it in!</p>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <form action="/create-product" method="POST" enctype="multipart/form-data">
+            <div class="row addP">
+                <div class="col-md-3 create">
+                    <label>Name:</label>
+                    <br>
+                    <input type="text" name="name" />
+
+                </div>
+                <div class="col-md-3 create">
+                    <label>Brand:</label>
+                    <br>
+                    <input type="text" name="brand" />
+                </div>
+                <div class="col-md-3 create">
+                    <label>Image:</label>
+                    <input type="file" name="image" />
+
+                </div>
+                <div class="col-md-2">
+                    <label>Ingredients:</label>
+                    <br>
+                    <textarea rows="5" cols="20" name="ingredient_list"></textarea>
+                    <br>
+
+                </div>
+            </div>
+            <div class="row addP">
+                <div class="col-md-4"></div>
+                <div class="col-md-4 createBttn"><button type="submit" class="btn btn-dark btn-lg">Create</button></div>
+                <div class="col-md-4"></div>
+            </div>
+        </form>
     </div>
-</div>
-
-<form action="/create-product" method="POST" enctype="multipart/form-data"></form>
-<div class="row addP">
-    <div class="col-md-3 create">
-        <label>Name:</label>
-        <br>
-        <input type="text" name="name" />
-        
-    </div>
-    <div class="col-md-3 create">
-        <label>Brand:</label>
-        <br>
-      <input type="text" name="brand" />
-    </div>
-    <div class="col-md-3 create">
-        <label>Image:</label>
-        <input type="file" name="image" />
-
-    </div>
-    <div class="col-md-2">
-        <label>Ingredients:</label>
-        <br>
-        <textarea rows="5" cols="20" name="ingredient_list"></textarea>
-        <br>
-        
-    </div>
-</div>
-<div class="row addP">
-    <div class="col-md-4"></div>
-    <div class="col-md-4 createBttn"><button type="submit" class="btn btn-dark btn-lg">Create</button></div>
-    <div class="col-md-4"></div>
-</div>
-</form>
-</div>
-
-    
-
-
-
-

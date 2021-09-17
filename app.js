@@ -61,7 +61,7 @@ app.use("/", quiz);
 const profile = require("./routes/user");
 app.use("/", profile);
 const auth = require("./routes/auth");
-const Product = require("./models/Product.model");
+// const Product = require("./models/Product.model");
 app.use("/", auth);
  
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
