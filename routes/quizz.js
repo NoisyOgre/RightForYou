@@ -1,14 +1,16 @@
 const router = require("express").Router();
 const test = require("../filter.js");
 
-const preferences = {};
-const result = {};
+let preferences = {};
+let result = {};
 
 router.get("/quiz1", (req, res) => {
   res.render("quiz/quiz");
 });
 
 router.post("/quiz1", (req, res) => {
+  result = {};
+  preferences = {};
   const { experience, goals, time, routine } = req.body;
   preferences.experience = experience;
   preferences.goals = goals;
@@ -42,7 +44,7 @@ router.post("/quiz3", (req, res) => {
 
 router.get("/my-personal-routine", async (req, res) => {
   let filteredData = await test();
-
+  result.counter = [1, 2, 3];
   /* result.cleansers = filteredData.cleansers;
   result.moisturizers = filteredData.moisturizers;
   result.sunProtection = filteredData.sunProtection;
@@ -56,49 +58,50 @@ router.get("/my-personal-routine", async (req, res) => {
   result.sunProSug = filteredData.sunProtection[random]; */
 
   switch (preferences.type) {
-    case "normal":
+    case "Normal":
       result.type = filteredData[4];
       result.normal = true;
       break;
-    case "oily":
+    case "Oily":
       result.type = filteredData[0];
       result.oily = true;
       break;
-    case "dry":
+    case "Dry":
       result.type = filteredData[1];
       result.dry = true;
       break;
-    case "combination":
+    case "Combination":
       result.type = filteredData[2];
       result.combination = true;
       break;
-    case "sensitive":
+    case "Sensitive":
       result.type = filteredData[3];
       result.sensitive = true;
       break;
   }
 
   switch (preferences.goals) {
-    case "prevention":
-      result.goals = "prevention";
+    case "Prevention":
+      result.prevention = true;
       break;
-    case "keeping":
-      result.goals = "keeping";
+    case "Keeping":
+      result.keeping = true;
       break;
-    case "helping":
-      result.goals = "helping";
+    case "Helping":
+      result.helping = true;
       break;
   }
 
   switch (preferences.time) {
     case "ten":
-      result.steps = 3;
+      result.ten = true;
+      result.thirty = false;
       break;
     case "thirty":
-      result.steps = 6;
+      result.thirty = true;
       break;
     case "thirtyPlus":
-      result.steps = 10;
+      result.thirtyPlus = true;
       break;
   }
 

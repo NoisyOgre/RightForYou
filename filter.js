@@ -253,11 +253,12 @@ async function test() {
   filteredData = [oily, dry, combo, sensitive, normal];
 
   console.log("The data has been filtered successfully!");
+  /* console.log(filteredData); */
 
   return filteredData;
 }
 
-test();
+/* test(); */
 /* const skincareList = skincareData.data; */
 
 const bestOily = [
