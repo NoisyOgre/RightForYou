@@ -258,11 +258,6 @@ async function test() {
   return filteredData;
 }
 
-<<<<<<< HEAD
-
-=======
-/* test(); */
->>>>>>> ac6c46cd08fda699079c14c6a4da04210615cdf4
 /* const skincareList = skincareData.data; */
 
 const bestOily = [
