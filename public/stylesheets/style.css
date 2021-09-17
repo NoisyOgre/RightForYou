@@ -116,6 +116,10 @@ a:hover {
   justify-content: center;
 }
 
+.routinePage{
+  padding-left: 5%;
+}
+
 .updatePage {
   padding-top: 1%;
   background-color: peachpuff;
@@ -166,6 +170,11 @@ a:hover {
   margin-left: 25%;
   margin-right: 25%;
 }
+
+.routinePage{
+  padding-left: 5%;
+}
+
 
 .delete {
   margin-left: 38%;
