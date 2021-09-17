@@ -1,61 +1,60 @@
 <container>
-<div class="row">
-    <div class="col-md-12">
-        <div class="introProfile">
-            <div class="introText">
-                <h1>{{username}}'s Profile</h1>
-            </div>
-        </div>
-    </div>
-
-    <div class="updatePage">
-<div class="row">
-    <h3>My Routines</h3>
-    {{#each favorites}}
-    <div class="col-md-12 my-routines ">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Routine</h5>
-                <p class="card-text">You Chose the routine(s) as the best for you.</p>
-                <a href="https://www.sephora.com/shop/skincare" class="card-link"><button type="submit"
-                        class="btn btn-outline-danger sm-lg">Buy Here</button></a>
-                <form action="/favorites/{{id}}/delete" method="POST">
-                    <button type="submit" class="btn btn-outline-danger sm-lg">Delete</button>
-            </div>
-        </div>
-    </div>
-    {{/each}}
-</div>
-
-
-<div class="row">
-    <h3>My favorites</h3>
-    {{#each favorites}}
-    <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-            <h5 class="favResults">{{name}}</h5>
-            <img src="/images/products.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-
-                <div class="fav-details">
-                    <form action="/our-products/{{id}}" method="POST">
-                        <button class="btn btn-outline-danger sm-lg"> ViewDetails</button>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="introProfile">
+                <div class="introText">
+                    <h1>{{username}}'s Profile</h1>
                 </div>
             </div>
-            <div class="delete">
-                <form>
-                    <form action="/favorites/{{id}}/delete" method="POST">
-                        <button type="submit" class="btn btn-outline-danger sm-lg">Remove</button>
-            </div>
-            </form>
         </div>
-    </div>
-    {{/each}}
-</div>
-    </div>
-    
-    
-    
+
+        <div class="updatePage">
+            <div class="row">
+                <h3>My Routines</h3>
+                {{#each favorites}}
+                <div class="col-md-12 my-routines ">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <br>
+                            <p class="card-text">You Chose the routine(s) as the best for you.</p>
+                            <br>
+                            <form action="/favorites/{{id}}/delete" method="POST">
+                                <button type="submit" class="btn btn-outline-danger sm-lg">Delete</button>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+
+            <div class="row">
+                <h3>My favorites</h3>
+                {{#each favorites}}
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <h5 class="favResults">{{name}}</h5>
+                        <img src="/images/products.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+
+                            <div class="fav-details">
+                                <form action="/our-products/{{id}}" method="POST">
+                                    <button class="btn btn-outline-danger sm-lg"> ViewDetails</button>
+                            </div>
+                        </div>
+                        <div class="delete">
+                            <form>
+                                <form action="/favorites/{{id}}/delete" method="POST">
+                                    <button type="submit" class="btn btn-outline-danger sm-lg">Remove</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+
+
 
 
 </container>
