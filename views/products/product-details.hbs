@@ -1,22 +1,26 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="intro">
-                <div class="introText">
+
+<div class="updatePage productDet">
 <h1>{{name}}</h1>
 <p>Ingredients: {{ingredient_list}}</p>
 <p> Brand : {{brand}}</p>
 {{#if imageUrl}}
 <img src="{{imageUrl}}" />
 {{/if}}
-<button><a href="/products/{{id}}/edit">Edit Product</a></button>
-<hr>
-<form action="/favorites/{{id}}" method="POST">
-    <button class="addToFavBtn">Add to Favorites</button>
-</form>
-</body>
 
 <hr>
+<div class="row">
+    <div class="col-md-6">
+        <a href="/products/{{id}}/edit"><button class="btn btn-dark sm-lg">Edit Product</button></a>
+    </div>
+    <div class="col-md-6">
+<form action="/favorites/{{id}}" method="POST">
+    <button class="btn btn-dark sm-lg">Add to Favorites</button>
+</form>
+    </div>
+</div>
+
+<hr>
+
 <p>Add a review</p>
 <form action="/comments/{{id}}" method="POST">
     <label>Name</label>
@@ -31,11 +35,5 @@
 {{#each comments}}
 <p>{{name}} - "{{comment}}"</p>
 {{/each}}
-
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
-
 

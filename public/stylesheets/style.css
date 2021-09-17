@@ -42,6 +42,16 @@ a:hover {
   border-color: rgb(56, 23, 3);
 }
 
+.introProfile {
+  text-align: center;
+  padding: 1.5% 1.5% 1.5% 1.5%;
+  background-color: white;
+  opacity: 70%;
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: rgb(56, 23, 3);
+}
+
 .quizOne {
   padding: 1.5% 1.5% 1.5% 1.5%;
   margin-top: auto;
@@ -107,6 +117,10 @@ a:hover {
   border-radius: 10px;
   opacity: 90%;
   border-color: rgb(56, 23, 3);
+}
+
+.productDet{
+  padding-left:5%;
 }
 
 .card-body {
